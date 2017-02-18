@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Postseason 2005 World Series</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+ 
+<!-- jQuery -->
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+ 
+<!-- DataTables -->
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<! Links here !>
+<link rel="stylesheet" type="text/css" href="my.css">
+<script src="my.js"></script>
+</head>
+<body>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img src="ws1.png" alt="Mountain View" style="width:90px;height:45px;">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+	    <li><a href="#momentum"><span class="glyphicon glyphicon-question-sign"></span>MOMENTUM MATTERS</a></li>
+        <li><a href="#analytics"> <span class="glyphicon glyphicon-eye-open"></span>ANALYTICS</a></li>
+        <li><a href="#data"><span class="glyphicon glyphicon-th-list"></span>DATA</a></li>
+        <li><a href="#video"><span class="glyphicon glyphicon-facetime-video"></span>VIDEO</a></li>
+        <li><a href="#team"><span class="glyphicon glyphicon-user"></span>OUR TEAM</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1><span class="glyphicon glyphicon-globe" style="color:red"></span> World Baseball Series 2005</h1>
+  <p>White Sox bring World Series title back to Chicago with historic sweep</p>
+</div>
+
+<div id="momentum" class="container-fluid text-center">
+<h2><span class="glyphicon glyphicon-question-sign" style="color:maroon"></span> DOES MOMENTUM MATTERS</h2>
+<p>With this research on 7 playoff series, CHW been a dominative team for the entire season with 99-63 record win.It seems home momentum doesn't matter much to CHW as they had 52-29 away.
+For HOU home momentum was way good, but the great loss in first-half season couldn't let them win although their second half  winning count was way higher to CHW.The longest steak of HOU was 7 games, their consistency dips down when they see great wins continously vice versa.</p>
+</div>
+<!-- Container (Analytics Section) -->
+<div id="analytics" class="container-fluid text-center">
+  <h2><span class="glyphicon glyphicon-eye-open" style="color:maroon"></span> VISUAL ANALYTICS</h2>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawChart1);
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'How strong the W/L teams were');
+      data.addColumn('number', 'Winning team pct');
+      
+
+      data.addRows([
+        [0,  0.6],
+        [0.107, 0.667],
+        [0.051, 0.75],
+        [-0.093, 0.8],
+        [0, 1],
+        [-0.036, 1],
+        [-0.021, 1]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'As Per September',
+          subtitle: 'How hot Winnig/Losing team was'
+        },
+        width: 700,
+        height: 400,
+        axes: {
+          x: {
+            0: {side: 'top'},
+        chartArea:{left:10,top:20,width:"100%",height:"100%"}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+      chart.draw(data, options);
+    }
+   function drawChart1() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'How strong the W/L teams were');
+      data.addColumn('number', 'Winning team pct');
+      
+
+      data.addRows([
+        [0.056, 0.6],
+        [-0.13, 0.667],
+        [-0.056, 0.75],
+        [0.072, 0.8],
+        [0.1, 1],
+        [0.097, 1],
+        [0.157, 1]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'By First-Half Season',
+          subtitle: 'How strong Winning/Losing team was'
+        },
+        width: 700,
+        height: 400,
+        axes: {
+          x: {
+            0: {side: 'top'},
+        chartArea:{left:10,top:20,width:"100%",height:"100%"}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('lin_top_x'));
+
+      chart.draw(data, options);
+    }
+  </script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <!--Table and divs that hold the pie charts-->
+    <table class="columns">
+      <tr>
+        <td><div id="line_top_x" style="border: 2px solid #38388d"></div></td>
+        <td><div id="lin_top_x" style="border: 2px solid #38388d"></div></td>
+      </tr>
+      <tr>
+       <td><div id="li_top_x" style="border: 2px solid #38388d"></div></td>
+       <td><div id="linechart_material" style="border: 2px solid #38388d"></div></td>
+      </tr>
+    </table>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['li']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'How strong the W/L teams were');
+      data.addColumn('number', 'Winning team pct');
+      
+
+      data.addRows([
+        [0,  0.6],
+        [ -0.068, 0.667],
+        [ -0.007, 0.75],
+        [0.025, 0.8],
+        [0.025, 1],
+        [0.111, 1],
+        [0.062, 1]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Overall W/L',
+          subtitle: 'How strong Winning/Losing Team was'
+        },
+        width: 700,
+        height: 400,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('li_top_x'));
+
+      chart.draw(data, options);
+    }
+  </script>
+    <script type="text/javascript">
+            google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'W/L teams');
+      data.addColumn('number', 'September');
+      data.addColumn('number', 'Overall');
+      data.addColumn('number', 'Half-Season');
+
+      data.addRows([
+        [0.6, 0, 0, 0.056],
+        [0.667, 0.107, -0.068, -0.13],
+        [0.75, 0.051, -0.007, -0.056],
+        [0.8, -0.093, 0.025, 0.072],
+        [1, 0, 0.025, 0.1],
+        [1, -0.036, 0.111, 0.097],
+        [1, -0.021, 0.062, 0.157]
+       
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Baseball World Series 2005',
+          subtitle: 'Altogether'
+        },
+        width: 700,
+        height: 400
+      };
+
+      var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</div>
+
+<!-- Container (Data Section) -->
+<div id="data" class="container-fluid text-center bg-grey">
+  <h2><span class="glyphicon glyphicon-th-list" style="color:maroon"></span> CONSOLIDATED DATA</h2><br>
+  <table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>Playoff Pair</th>
+            <th>September</th>
+            <th>Half-Season</th>
+            <th>Overall</th>
+            <th>W Team pct</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>LAA vs NYY</td>
+            <td>0</td>
+            <td>0.056</td>
+            <td>0</td>
+            <td>0.6</td>
+        </tr>
+        <tr>
+            <td>HOU vs STL</td>
+            <td>0.107</td>
+            <td>-0.13</td>
+            <td>-0.068</td>
+            <td>0.667</td>
+        </tr>
+        <tr>
+             <td>HOU vs ATL</td>
+             <td>0.051</td>
+             <td>-0.056</td>
+             <td>-0.007</td>
+             <td>0.75</td>
+        </tr>
+        <tr>
+             <td>CHW vs LAA</td>
+             <td>-0.093</td>
+             <td>0.072</td>
+             <td>0.025</td>
+             <td>1</td>
+        </tr>
+        <tr>
+             <td>CHW vs BOS</td>
+             <td>0</td>
+             <td>0.1</td>
+             <td>0.025</td>
+             <td>1</td>
+        </tr>
+        <tr>
+             <td>STL vs SDP</td>
+             <td>-0.036</td>
+             <td>0.097</td>
+             <td>0.111</td>
+             <td>1</td>
+        </tr>
+        <tr>
+             <td>CHW vs HOU</td>
+             <td>-0.021</td>
+             <td>0.157</td>
+             <td>0.062</td>
+             <td>1</td>
+        </tr>
+
+    </tbody>
+</table>
+<script>
+$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+</script>
+  </div><br>
+  
+<!-- Container (Video Section) -->
+<div id="video" class="container-fluid">
+  <div class="text-center">
+    <h2><span class="glyphicon glyphicon-facetime-video" style="color:maroon"></span> Video</h2>
+    <h4>Explained here for you</h4>
+	<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+
+  <iframe id="kaltura_player" 
+  src="https://cdnapisec.kaltura.com/p/1371761/sp/137176100/embedIframeJs/uiconf_id/31473692/partner_id/1371761?iframeembed=true&playerId=kaltura_player&entry_id=0_9wa9go40&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;&wid=1_j0twgb5d" 
+  width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0"></iframe>
+
+
+</div>
+</div>
+</div>
+</div> 
+</div>
+
+<!-- Container (Team Section) -->
+<div id="team" class="container-fluid text-center bg-grey">
+  <h2 class="text-center"><span class="glyphicon glyphicon-user" style="color:maroon"></span> OUR TEAM</h2>
+<br><br><nbsp>
+<div id="ourteam">
+
+</div>
+
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+})
+</script>
+
+</body>
+</html>
+
+
